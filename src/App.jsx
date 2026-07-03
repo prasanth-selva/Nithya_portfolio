@@ -16,8 +16,24 @@ function App() {
   const [activeSection, setActiveSection] = useState(0);
   const [soundEnabled, setSoundEnabled] = useState(false);
 
-  // Handle keyboard navigation
+  // Handle keyboard and wheel navigation
   useEffect(() => {
+    let isScrolling = false;
+
+    const handleWheel = (e) => {
+      if (isScrolling) return;
+      
+      if (e.deltaY > 50) {
+        setActiveSection((prev) => Math.min(prev + 1, SECTIONS.length - 1));
+        isScrolling = true;
+        setTimeout(() => isScrolling = false, 1000); // Wait 1s before allowing next scroll
+      } else if (e.deltaY < -50) {
+        setActiveSection((prev) => Math.max(prev - 1, 0));
+        isScrolling = true;
+        setTimeout(() => isScrolling = false, 1000);
+      }
+    };
+
     const handleKeyDown = (e) => {
       if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
         setActiveSection((prev) => Math.min(prev + 1, SECTIONS.length - 1));
@@ -25,8 +41,14 @@ function App() {
         setActiveSection((prev) => Math.max(prev - 1, 0));
       }
     };
+
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener('wheel', handleWheel);
+    
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('wheel', handleWheel);
+    };
   }, []);
 
   const nextSection = () => setActiveSection((prev) => Math.min(prev + 1, SECTIONS.length - 1));

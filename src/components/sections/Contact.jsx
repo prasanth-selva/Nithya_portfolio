@@ -17,7 +17,7 @@ export default function Contact() {
         animate={{ opacity: 1, y: 0 }}
         className="relative z-10 max-w-3xl"
       >
-        <h2 className="text-5xl md:text-7xl font-display font-black tracking-tighter text-shadow-pink leading-none mb-8">
+        <h2 className="text-4xl md:text-7xl font-display font-black tracking-tighter text-shadow-pink leading-none mb-8">
           LET’S BUILD<br />
           <span className="text-nithyah-emerald">SOMETHING</span><br />
           MEANINGFUL.

@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 export default function Navigation({ activeSection, totalSections, onNext, onPrev }) {
   return (
-    <div className="absolute bottom-8 right-8 md:bottom-12 md:right-12 z-50 flex items-center gap-6">
+    <div className="absolute bottom-4 right-4 md:bottom-12 md:right-12 z-50 flex items-center gap-2 md:gap-6">
       
       <div className="flex flex-col items-end mr-4">
         <span className="text-[10px] tracking-[0.2em] text-white/50 mb-1">NAVIGATION</span>
@@ -33,7 +33,7 @@ export default function Navigation({ activeSection, totalSections, onNext, onPre
 
         <button 
           onClick={() => {}} 
-          className="px-6 py-2 border border-white/10 rounded-full hover:bg-white/10 hover:border-nithyah-emerald transition-all text-xs tracking-widest flex items-center gap-2 group"
+          className="px-4 py-2 md:px-6 border border-white/10 rounded-full hover:bg-white/10 hover:border-nithyah-emerald transition-all text-[10px] md:text-xs tracking-widest flex items-center gap-1 md:gap-2 group"
         >
           <PlayCircle className="w-4 h-4 text-white group-hover:text-nithyah-emerald transition-colors" />
           <span>OPEN</span>

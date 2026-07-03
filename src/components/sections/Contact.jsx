@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Instagram } from 'lucide-react';
+import { Mail, MessageCircle, Link } from 'lucide-react';
 
 export default function Contact() {
   return (
@@ -32,7 +32,7 @@ export default function Contact() {
             SEND A MESSAGE
           </button>
           <button className="px-8 py-4 bg-transparent border border-white/20 text-white text-xs tracking-[0.2em] hover:border-nithyah-emerald hover:text-nithyah-emerald transition-colors rounded-full flex items-center gap-2">
-            <Linkedin className="w-4 h-4" /> CONNECT ON LINKEDIN
+            <Link className="w-4 h-4" /> CONNECT ON LINKEDIN
           </button>
         </div>
 
@@ -41,7 +41,7 @@ export default function Contact() {
             <Mail className="w-5 h-5" />
           </a>
           <a href="#" className="hover:text-nithyah-emerald transition-colors">
-            <Instagram className="w-5 h-5" />
+            <MessageCircle className="w-5 h-5" />
           </a>
         </div>
 

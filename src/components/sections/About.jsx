@@ -85,8 +85,8 @@ export default function About() {
           {/* Using a structural building image overlay to simulate the character from the references */}
           <div className="relative w-full max-w-lg aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-nithyah-black/50">
             <img 
-              src="https://images.unsplash.com/photo-1541888086225-f6404f45612f?q=80&w=1974&auto=format&fit=crop" 
-              alt="Structural"
+              src="/photos/miya.jpeg" 
+              alt="Anime Girl"
               className="w-full h-full object-cover mix-blend-luminosity opacity-80"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-nithyah-black via-transparent to-transparent" />

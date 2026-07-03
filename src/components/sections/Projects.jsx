@@ -45,10 +45,10 @@ export default function Projects() {
         </h2>
       </div>
 
-      <div className="flex h-full items-center justify-between gap-8 pt-8">
+      <div className="flex flex-col lg:flex-row h-full items-center justify-between gap-4 lg:gap-8 pt-16 lg:pt-8 overflow-y-auto lg:overflow-visible pb-12 lg:pb-0">
         
         {/* Left Side: Navigation List (Kagura style) */}
-        <div className="w-1/4 flex flex-col gap-6 z-20">
+        <div className="w-full lg:w-1/4 flex flex-row lg:flex-col gap-4 lg:gap-6 z-20 overflow-x-auto lg:overflow-visible shrink-0 pb-2 lg:pb-0 no-scrollbar">
           {projects.map((proj, idx) => (
             <button
               key={proj.id}
@@ -72,7 +72,7 @@ export default function Projects() {
         </div>
 
         {/* Center: Dominant Visual Subject */}
-        <div className="w-2/4 h-[80%] relative z-10 flex justify-center items-center">
+        <div className="w-full lg:w-2/4 h-[40vh] lg:h-[80%] relative z-10 flex justify-center items-center shrink-0 my-4 lg:my-0">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeProject}
@@ -94,7 +94,7 @@ export default function Projects() {
         </div>
 
         {/* Right Side: Project Details */}
-        <div className="w-1/4 flex flex-col justify-end h-[80%] pb-12 z-20 text-right pr-4">
+        <div className="w-full lg:w-1/4 flex flex-col justify-end lg:h-[80%] pb-4 lg:pb-12 z-20 text-left lg:text-right px-2 lg:px-0 lg:pr-4">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeProject}
@@ -126,7 +126,7 @@ export default function Projects() {
                 </div>
               </div>
 
-              <div className="flex flex-col items-end gap-2 mt-4">
+              <div className="flex flex-col items-start lg:items-end gap-2 mt-4">
                 <button className="text-[10px] tracking-[0.2em] py-2 px-6 border border-white/20 hover:border-nithyah-emerald hover:bg-white/5 transition-all w-fit">
                   VIEW PROJECT
                 </button>

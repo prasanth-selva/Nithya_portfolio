@@ -46,9 +46,9 @@ export default function Hero() {
           <h3 className="text-xs tracking-widest text-white/50">2ND YEAR STUDENT</h3>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="relative z-10 mb-8">
-          <h1 className="text-7xl md:text-[140px] leading-none font-display font-black tracking-tighter mix-blend-overlay text-shadow-pink">
-            NITHYAH<span className="text-nithyah-pink">.</span>
+        <motion.div variants={itemVariants} className="relative z-10 mb-8 whitespace-nowrap">
+          <h1 className="text-5xl md:text-[100px] leading-none font-display font-black tracking-tighter mix-blend-overlay text-shadow-pink">
+            NITHYA SRI<span className="text-nithyah-pink">.</span>
           </h1>
         </motion.div>
 
@@ -66,19 +66,35 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Right Metadata block */}
-      <motion.div variants={itemVariants} className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-12 text-right">
-        <div>
-          <p className="text-[9px] tracking-widest text-white/40 mb-1">STATUS</p>
-          <p className="text-xs tracking-wider text-nithyah-white">LEARNING & BUILDING</p>
+      {/* Right Side: Dominant Visual Subject */}
+      <motion.div 
+        variants={{
+          hidden: { opacity: 0, scale: 0.9, x: 50 },
+          visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 1, ease: 'easeOut' } },
+          exit: { opacity: 0, scale: 1.05 }
+        }} 
+        className="hidden lg:flex justify-end items-center absolute right-0 top-1/2 -translate-y-1/2 h-[120%] -mr-16 pointer-events-none"
+      >
+        <div className="relative w-full max-w-lg aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-nithyah-black/50">
+          <img 
+            src="/photos/jkt48.jpeg" 
+            alt="Nithya Sri"
+            className="w-full h-full object-cover mix-blend-luminosity opacity-80"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-nithyah-black via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-nithyah-pink/10 mix-blend-overlay" />
         </div>
-        <div>
-          <p className="text-[9px] tracking-widest text-white/40 mb-1">FIELD</p>
-          <p className="text-xs tracking-wider text-nithyah-white">CIVIL ENGINEERING</p>
-        </div>
-        <div>
-          <p className="text-[9px] tracking-widest text-white/40 mb-1">FOCUS</p>
-          <p className="text-xs tracking-wider text-nithyah-emerald">DESIGN · STRUCTURES · SUSTAINABILITY</p>
+
+        {/* Small Metadata overlaying the image */}
+        <div className="absolute bottom-24 -left-4 flex flex-col gap-4 text-left bg-black/40 p-6 backdrop-blur-md border-r-2 border-nithyah-pink rounded-r-xl shadow-xl">
+          <div>
+            <p className="text-[9px] tracking-widest text-white/40 mb-1">STATUS</p>
+            <p className="text-xs tracking-wider text-nithyah-white">LEARNING & BUILDING</p>
+          </div>
+          <div>
+            <p className="text-[9px] tracking-widest text-white/40 mb-1">FIELD</p>
+            <p className="text-xs tracking-wider text-nithyah-white">CIVIL ENGINEERING</p>
+          </div>
         </div>
       </motion.div>
     </motion.div>

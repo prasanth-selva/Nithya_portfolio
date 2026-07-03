@@ -40,14 +40,14 @@ export default function Hero() {
       </motion.div>
 
       {/* Main Content */}
-      <div className="md:ml-24 max-w-3xl">
+      <div className="md:ml-24 max-w-3xl relative z-20">
         <motion.div variants={itemVariants} className="mb-6">
           <h2 className="text-sm tracking-[0.3em] text-nithyah-emerald mb-2">B.E. CIVIL ENGINEERING</h2>
           <h3 className="text-xs tracking-widest text-white/50">2ND YEAR STUDENT</h3>
         </motion.div>
 
         <motion.div variants={itemVariants} className="relative z-10 mb-8 whitespace-nowrap">
-          <h1 className="text-5xl md:text-[100px] leading-none font-display font-black tracking-tighter mix-blend-overlay text-shadow-pink">
+          <h1 className="text-[12vw] md:text-[100px] leading-none font-display font-black tracking-tighter mix-blend-overlay text-shadow-pink">
             NITHYA SRI<span className="text-nithyah-pink">.</span>
           </h1>
         </motion.div>
@@ -73,7 +73,7 @@ export default function Hero() {
           visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 1, ease: 'easeOut' } },
           exit: { opacity: 0, scale: 1.05 }
         }} 
-        className="hidden lg:flex justify-end items-end absolute right-0 bottom-0 h-[125%] -mr-12 pointer-events-none"
+        className="flex lg:flex justify-end items-end absolute right-0 bottom-0 h-[80%] md:h-[125%] md:-mr-12 pointer-events-none opacity-40 md:opacity-100 z-0"
       >
         <div className="relative w-full max-w-2xl xl:max-w-4xl h-full flex items-end">
           <img 
@@ -84,7 +84,7 @@ export default function Hero() {
         </div>
 
         {/* Small Metadata overlaying the image */}
-        <div className="absolute bottom-32 -left-4 flex flex-col gap-4 text-left bg-black/40 p-6 backdrop-blur-md border-r-2 border-nithyah-pink rounded-r-xl shadow-xl z-10">
+        <div className="hidden md:flex absolute bottom-32 -left-4 flex-col gap-4 text-left bg-black/40 p-6 backdrop-blur-md border-r-2 border-nithyah-pink rounded-r-xl shadow-xl z-10">
           <div>
             <p className="text-[9px] tracking-widest text-white/40 mb-1">STATUS</p>
             <p className="text-xs tracking-wider text-nithyah-white">LEARNING & BUILDING</p>

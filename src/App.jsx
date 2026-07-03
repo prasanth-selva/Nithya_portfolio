@@ -60,24 +60,24 @@ function App() {
       <Background activeIndex={activeSection} />
 
       {/* Main Translucent Frame */}
-      <div className="absolute inset-0 flex items-center justify-center p-4 md:p-12 pointer-events-none">
+      <div className="absolute inset-0 flex items-center justify-center p-2 md:p-12 pointer-events-none">
         <div className="relative w-full h-full max-w-[1900px] max-h-[1000px] md:w-[96vw] md:h-[96vh] border border-white/10 bg-nithyah-burgundy/10 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl pointer-events-auto">
           
           {/* Top Left Branding/Sound Toggle */}
-          <div className="absolute top-6 left-8 z-50 flex items-center gap-4">
+          <div className="absolute top-4 left-4 md:top-6 md:left-8 z-50 flex items-center gap-2 md:gap-4">
             <div className="w-2 h-2 rounded-full bg-nithyah-pink animate-pulse" />
-            <span className="text-xs tracking-[0.2em] font-medium text-white/50">NITHYA SRI PORTFOLIO</span>
+            <span className="text-[9px] md:text-xs tracking-[0.2em] font-medium text-white/50">NITHYA SRI PORTFOLIO</span>
           </div>
 
           <button 
             onClick={() => setSoundEnabled(!soundEnabled)}
-            className="absolute top-6 right-8 z-50 text-xs tracking-[0.1em] font-medium text-white/50 hover:text-nithyah-pink transition-colors"
+            className="absolute top-4 right-4 md:top-6 md:right-8 z-50 text-[9px] md:text-xs tracking-[0.1em] font-medium text-white/50 hover:text-nithyah-pink transition-colors"
           >
             SOUND [{soundEnabled ? 'ON' : 'OFF'}]
           </button>
 
           {/* Section Content */}
-          <div className="relative w-full h-full p-8 md:p-16 pt-24 pb-24">
+          <div className="relative w-full h-full p-4 md:p-16 pt-16 pb-16 md:pt-24 md:pb-24 overflow-hidden">
             <AnimatePresence mode="wait">
               {activeSection === 0 && <Hero key="hero" />}
               {activeSection === 1 && <About key="about" />}

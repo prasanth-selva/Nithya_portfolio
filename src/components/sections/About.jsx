@@ -34,7 +34,7 @@ export default function About() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 h-full items-center">
         
         {/* Left Side: Content (Miya style) */}
-        <div className="flex flex-col justify-center z-20 h-full pt-12">
+        <div className="flex flex-col justify-center z-20 h-full pt-4 md:pt-12 relative">
           
           <motion.div variants={itemVariants} className="mb-6 flex items-center gap-4">
             <div className="w-12 h-12 rounded-full border-2 border-nithyah-pink/50 overflow-hidden bg-white/5 backdrop-blur-sm p-1">
@@ -48,7 +48,7 @@ export default function About() {
           </motion.div>
 
           <motion.div variants={itemVariants} className="mb-8">
-            <h2 className="text-6xl md:text-8xl font-display font-black tracking-tighter text-shadow-pink leading-none">
+            <h2 className="text-5xl md:text-8xl font-display font-black tracking-tighter text-shadow-pink leading-none">
               ABOUT<span className="text-nithyah-emerald">.</span>
             </h2>
           </motion.div>
@@ -80,7 +80,7 @@ export default function About() {
           visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 1, ease: 'easeOut' } },
           exit: { opacity: 0, scale: 1.05 }
         }} 
-        className="hidden lg:flex justify-end items-end absolute right-0 bottom-0 h-[110%] -mr-16 pointer-events-none"
+        className="flex lg:flex justify-end items-end absolute right-0 bottom-0 h-[80%] md:h-[110%] md:-mr-16 pointer-events-none opacity-30 md:opacity-100 z-0"
       >
         <div className="relative w-full max-w-xl xl:max-w-2xl h-full flex items-end">
           <img 
@@ -91,7 +91,7 @@ export default function About() {
         </div>
 
         {/* Small Metadata at bottom right of the image */}
-        <div className="absolute bottom-24 right-12 flex flex-col gap-4 text-right bg-black/40 p-6 backdrop-blur-md border-l-2 border-nithyah-emerald rounded-l-xl z-10 shadow-xl">
+        <div className="hidden md:flex absolute bottom-24 right-12 flex-col gap-4 text-right bg-black/40 p-6 backdrop-blur-md border-l-2 border-nithyah-emerald rounded-l-xl z-10 shadow-xl">
           <div>
             <p className="text-[10px] tracking-widest text-white/40">YEAR</p>
             <p className="text-sm tracking-wider font-bold text-nithyah-white">02</p>

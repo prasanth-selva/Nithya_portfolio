@@ -16,7 +16,7 @@ export default function Skills() {
         className="mb-16"
       >
         <h2 className="text-sm tracking-[0.3em] text-nithyah-emerald mb-2">CORE SKILLS</h2>
-        <h1 className="text-6xl md:text-8xl font-display font-black tracking-tighter text-shadow-pink">
+        <h1 className="text-5xl md:text-8xl font-display font-black tracking-tighter text-shadow-pink">
           FOUNDATION.
         </h1>
       </motion.div>

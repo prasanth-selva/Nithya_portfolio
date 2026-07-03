@@ -22,7 +22,7 @@ export default function Background({ activeIndex }) {
           className="absolute inset-0 w-full h-full"
         >
           <img 
-            src={bgImages[activeIndex]} 
+            src="/photos/background.png" 
             alt="Cinematic architectural background" 
             className="w-full h-full object-cover origin-center"
           />

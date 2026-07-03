@@ -73,20 +73,18 @@ export default function Hero() {
           visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 1, ease: 'easeOut' } },
           exit: { opacity: 0, scale: 1.05 }
         }} 
-        className="hidden lg:flex justify-end items-center absolute right-0 top-1/2 -translate-y-1/2 h-[120%] -mr-16 pointer-events-none"
+        className="hidden lg:flex justify-end items-end absolute right-0 bottom-0 h-[125%] -mr-12 pointer-events-none"
       >
-        <div className="relative w-full max-w-lg aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-nithyah-black/50">
+        <div className="relative w-full max-w-2xl xl:max-w-4xl h-full flex items-end">
           <img 
-            src="/photos/jkt48.jpeg" 
+            src="/photos/hero.png" 
             alt="Nithya Sri"
-            className="w-full h-full object-cover mix-blend-luminosity opacity-80"
+            className="w-auto h-[100%] object-contain object-bottom drop-shadow-[0_0_30px_rgba(255,45,135,0.2)] opacity-90 origin-bottom scale-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-nithyah-black via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-nithyah-pink/10 mix-blend-overlay" />
         </div>
 
         {/* Small Metadata overlaying the image */}
-        <div className="absolute bottom-24 -left-4 flex flex-col gap-4 text-left bg-black/40 p-6 backdrop-blur-md border-r-2 border-nithyah-pink rounded-r-xl shadow-xl">
+        <div className="absolute bottom-32 -left-4 flex flex-col gap-4 text-left bg-black/40 p-6 backdrop-blur-md border-r-2 border-nithyah-pink rounded-r-xl shadow-xl z-10">
           <div>
             <p className="text-[9px] tracking-widest text-white/40 mb-1">STATUS</p>
             <p className="text-xs tracking-wider text-nithyah-white">LEARNING & BUILDING</p>

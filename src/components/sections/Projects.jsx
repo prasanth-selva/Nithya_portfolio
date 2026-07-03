@@ -25,7 +25,7 @@ const projects = [
     description: 'An academic structural model exploring load distribution, stability and the basic behavior of bridge components.',
     category: 'STRUCTURES',
     year: '2025',
-    image: 'https://images.unsplash.com/photo-1541888046-608b63e80064?q=80&w=2070&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop'
   }
 ];
 

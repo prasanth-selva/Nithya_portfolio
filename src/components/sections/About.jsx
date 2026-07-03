@@ -74,41 +74,38 @@ export default function About() {
         </div>
 
         {/* Right Side: Dominant Visual Subject */}
-        <motion.div 
-          variants={{
-            hidden: { opacity: 0, scale: 0.9, x: 50 },
-            visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 1, ease: 'easeOut' } },
-            exit: { opacity: 0, scale: 1.05 }
-          }} 
-          className="hidden lg:flex justify-end items-center relative h-[120%] -mr-16 -mt-12 pointer-events-none"
-        >
-          {/* Using a structural building image overlay to simulate the character from the references */}
-          <div className="relative w-full max-w-lg aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-nithyah-black/50">
-            <img 
-              src="/photos/miya.jpeg" 
-              alt="Anime Girl"
-              className="w-full h-full object-cover mix-blend-luminosity opacity-80"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-nithyah-black via-transparent to-transparent" />
-            <div className="absolute inset-0 bg-nithyah-pink/10 mix-blend-overlay" />
-          </div>
+      <motion.div 
+        variants={{
+          hidden: { opacity: 0, scale: 0.9, x: 50 },
+          visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 1, ease: 'easeOut' } },
+          exit: { opacity: 0, scale: 1.05 }
+        }} 
+        className="hidden lg:flex justify-end items-end absolute right-0 bottom-0 h-[110%] -mr-16 pointer-events-none"
+      >
+        <div className="relative w-full max-w-xl xl:max-w-2xl h-full flex items-end">
+          <img 
+            src="/photos/about_image.png" 
+            alt="Anime Girl"
+            className="w-auto h-[95%] object-contain object-bottom drop-shadow-[0_0_30px_rgba(46,229,157,0.2)] opacity-90"
+          />
+        </div>
 
-          {/* Small Metadata at bottom right of the image */}
-          <div className="absolute bottom-12 -right-4 flex flex-col gap-4 text-right bg-black/40 p-6 backdrop-blur-md border-l-2 border-nithyah-emerald rounded-l-xl">
-            <div>
-              <p className="text-[10px] tracking-widest text-white/40">YEAR</p>
-              <p className="text-sm tracking-wider font-bold text-nithyah-white">02</p>
-            </div>
-            <div>
-              <p className="text-[10px] tracking-widest text-white/40">PROJECTS</p>
-              <p className="text-sm tracking-wider font-bold text-nithyah-white">03</p>
-            </div>
-            <div>
-              <p className="text-[10px] tracking-widest text-white/40">MAJOR</p>
-              <p className="text-xs tracking-wider font-bold text-nithyah-pink">CIVIL ENG</p>
-            </div>
+        {/* Small Metadata at bottom right of the image */}
+        <div className="absolute bottom-24 right-12 flex flex-col gap-4 text-right bg-black/40 p-6 backdrop-blur-md border-l-2 border-nithyah-emerald rounded-l-xl z-10 shadow-xl">
+          <div>
+            <p className="text-[10px] tracking-widest text-white/40">YEAR</p>
+            <p className="text-sm tracking-wider font-bold text-nithyah-white">02</p>
           </div>
-        </motion.div>
+          <div>
+            <p className="text-[10px] tracking-widest text-white/40">PROJECTS</p>
+            <p className="text-sm tracking-wider font-bold text-nithyah-white">03</p>
+          </div>
+          <div>
+            <p className="text-[10px] tracking-widest text-white/40">MAJOR</p>
+            <p className="text-xs tracking-wider font-bold text-nithyah-pink">CIVIL ENG</p>
+          </div>
+        </div>
+      </motion.div>
 
       </div>
     </motion.div>

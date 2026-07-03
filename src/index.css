@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-nithyah-black text-nithyah-white font-sans antialiased overflow-hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+}
+
+@layer utilities {
+  .text-shadow-pink {
+    text-shadow: 0 0 20px rgba(255, 45, 135, 0.5);
+  }
+  .text-shadow-green {
+    text-shadow: 0 0 20px rgba(46, 229, 157, 0.5);
+  }
+}
+
+/* Custom Scrollbar for inner content if needed */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(16, 9, 13, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 45, 135, 0.3);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 45, 135, 0.6);
+}

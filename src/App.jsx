@@ -61,12 +61,12 @@ function App() {
 
       {/* Main Translucent Frame */}
       <div className="absolute inset-0 flex items-center justify-center p-4 md:p-12 pointer-events-none">
-        <div className="relative w-full h-full max-w-[1600px] max-h-[900px] md:w-[85vw] md:h-[80vh] border border-white/10 bg-nithyah-burgundy/10 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl pointer-events-auto">
+        <div className="relative w-full h-full max-w-[1900px] max-h-[1000px] md:w-[96vw] md:h-[96vh] border border-white/10 bg-nithyah-burgundy/10 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl pointer-events-auto">
           
           {/* Top Left Branding/Sound Toggle */}
           <div className="absolute top-6 left-8 z-50 flex items-center gap-4">
             <div className="w-2 h-2 rounded-full bg-nithyah-pink animate-pulse" />
-            <span className="text-xs tracking-[0.2em] font-medium text-white/50">NITHYAH PORTFOLIO</span>
+            <span className="text-xs tracking-[0.2em] font-medium text-white/50">NITHYA SRI PORTFOLIO</span>
           </div>
 
           <button 

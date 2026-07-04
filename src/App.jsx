@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Background from './components/Background';
+import Welcome from './components/Welcome';
 import Navigation from './components/Navigation';
 import Cursor from './components/Cursor';
 import Hero from './components/sections/Hero';
@@ -13,6 +14,7 @@ import Contact from './components/sections/Contact';
 const SECTIONS = ['HERO', 'ABOUT', 'SKILLS', 'PROJECTS', 'JOURNEY', 'CONTACT'];
 
 function App() {
+  const [hasEntered, setHasEntered] = useState(false);
   const [activeSection, setActiveSection] = useState(0);
   const [soundEnabled, setSoundEnabled] = useState(false);
   const [audio] = useState(() => {
@@ -85,6 +87,15 @@ function App() {
 
   const nextSection = () => setActiveSection((prev) => Math.min(prev + 1, SECTIONS.length - 1));
   const prevSection = () => setActiveSection((prev) => Math.max(prev - 1, 0));
+
+  const handleEnter = (withMusic) => {
+    setSoundEnabled(withMusic);
+    setHasEntered(true);
+  };
+
+  if (!hasEntered) {
+    return <Welcome onEnter={handleEnter} />;
+  }
 
   return (
     <div 

@@ -1,43 +1,60 @@
 import { motion } from 'framer-motion';
-import { ChevronUp, ChevronDown } from 'lucide-react';
+import { Flower, User, Camera, Mail } from 'lucide-react';
 import clsx from 'clsx';
+
+const navItems = ['PROFILE', 'ABOUT', 'SKILLS', 'PROJECTS', 'JOURNEY', 'CONTACT'];
 
 export default function Navigation({ activeSection, totalSections, onNext, onPrev }) {
   return (
-    <div className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-50 flex flex-col items-center gap-4 md:gap-6 bg-black/40 backdrop-blur-md p-3 rounded-full border border-nithyah-pink/20 shadow-[0_0_15px_rgba(255,45,135,0.1)]">
+    <div className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-50 flex flex-col items-center justify-between h-[80vh] py-8 pointer-events-auto">
       
-      <button 
-        onClick={onPrev}
-        disabled={activeSection === 0}
-        className="p-2 rounded-full bg-white/5 hover:bg-nithyah-pink hover:text-white text-white/70 transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none shadow-sm"
-      >
-        <ChevronUp className="w-5 h-5 md:w-6 md:h-6" />
-      </button>
-
-      <div className="flex flex-col gap-4 py-2 items-center relative">
-        <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[1px] bg-white/10 -z-10" />
-        
-        {Array.from({ length: totalSections }).map((_, idx) => (
-          <motion.div
-            key={idx}
-            className={clsx(
-              "rounded-full transition-all duration-500 cursor-pointer shadow-sm",
-              activeSection === idx 
-                ? "bg-nithyah-emerald w-3 h-8 shadow-[0_0_10px_rgba(46,229,157,0.5)]" 
-                : "bg-white/40 w-2 h-2 hover:bg-white/80"
-            )}
-            animate={{ scale: activeSection === idx ? 1 : 0.9 }}
-          />
-        ))}
+      {/* Top Icon */}
+      <div className="text-nithyah-pink mb-8">
+        <Flower className="w-6 h-6 md:w-8 md:h-8 drop-shadow-[0_0_10px_rgba(255,45,135,0.8)]" />
       </div>
 
-      <button 
-        onClick={onNext}
-        disabled={activeSection === totalSections - 1}
-        className="p-2 rounded-full bg-white/5 hover:bg-nithyah-emerald hover:text-nithyah-black text-white/70 transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none shadow-sm"
-      >
-        <ChevronDown className="w-5 h-5 md:w-6 md:h-6" />
-      </button>
+      {/* Vertical Text Links */}
+      <div className="flex flex-col gap-6 items-center flex-1">
+        {navItems.map((item, idx) => {
+          const isActive = activeSection === idx;
+          return (
+            <motion.div
+              key={item}
+              onClick={() => {
+                if (idx > activeSection) {
+                  for(let i=0; i < idx - activeSection; i++) onNext();
+                } else if (idx < activeSection) {
+                  for(let i=0; i < activeSection - idx; i++) onPrev();
+                }
+              }}
+              className={clsx(
+                "cursor-pointer transition-all duration-300 text-[10px] md:text-xs tracking-[0.3em] font-medium py-4 px-1 rounded-md flex items-center justify-center",
+                isActive 
+                  ? "bg-nithyah-pink/20 text-white shadow-[0_0_15px_rgba(255,45,135,0.4)] border border-nithyah-pink/50" 
+                  : "text-white/40 hover:text-white"
+              )}
+              style={{ writingMode: 'vertical-rl' }}
+              whileHover={{ scale: 1.05 }}
+              animate={{ scale: isActive ? 1.05 : 1 }}
+            >
+              {item}
+            </motion.div>
+          );
+        })}
+      </div>
+
+      {/* Bottom Social Icons */}
+      <div className="flex flex-col gap-6 mt-8">
+        <a href="#" className="text-white/40 hover:text-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] transition-all">
+          <User className="w-4 h-4 md:w-5 md:h-5" />
+        </a>
+        <a href="#" className="text-white/40 hover:text-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] transition-all">
+          <Camera className="w-4 h-4 md:w-5 md:h-5" />
+        </a>
+        <a href="#" className="text-white/40 hover:text-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] transition-all">
+          <Mail className="w-4 h-4 md:w-5 md:h-5" />
+        </a>
+      </div>
 
     </div>
   );

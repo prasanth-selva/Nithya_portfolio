@@ -114,7 +114,7 @@ function App() {
           </button>
 
           {/* Section Content */}
-          <div className="relative w-full h-full p-4 md:p-16 pt-16 pb-16 md:pt-24 md:pb-24 overflow-hidden">
+          <div className="relative w-full h-full p-4 md:p-16 pl-16 md:pl-28 pt-16 pb-16 md:pt-24 md:pb-24 overflow-hidden">
             <AnimatePresence mode="wait">
               {activeSection === 0 && <Hero key="hero" />}
               {activeSection === 1 && <About key="about" />}

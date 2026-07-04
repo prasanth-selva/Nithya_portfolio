@@ -15,6 +15,38 @@ const SECTIONS = ['HERO', 'ABOUT', 'SKILLS', 'PROJECTS', 'JOURNEY', 'CONTACT'];
 function App() {
   const [activeSection, setActiveSection] = useState(0);
   const [soundEnabled, setSoundEnabled] = useState(false);
+  const [audio] = useState(() => {
+    const aud = new Audio('/music/background.mp3');
+    aud.loop = true;
+    return aud;
+  });
+
+  // Touch Swipe Variables
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientY);
+  };
+
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientY);
+
+  const onTouchEndEvent = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    if (distance > minSwipeDistance) nextSection();
+    if (distance < -minSwipeDistance) prevSection();
+  };
+
+  useEffect(() => {
+    if (soundEnabled) {
+      audio.play().catch(e => console.error("Audio play failed:", e));
+    } else {
+      audio.pause();
+    }
+  }, [soundEnabled, audio]);
 
   // Handle keyboard and wheel navigation
   useEffect(() => {
@@ -55,7 +87,12 @@ function App() {
   const prevSection = () => setActiveSection((prev) => Math.max(prev - 1, 0));
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden bg-nithyah-black text-nithyah-white">
+    <div 
+      className="relative w-screen h-screen overflow-hidden bg-nithyah-black text-nithyah-white"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEndEvent}
+    >
       <Cursor />
       <Background activeIndex={activeSection} />
 
